@@ -7,15 +7,15 @@
       "import * as React from 'react';",
       "import { View, StyleSheet, Text } from 'react-native';",
       "",
-      "export interface ${1:App}Props {",
+      "export interface Props {",
       "}",
       "",
-      "export default class ${1:}Component extends React.Component<${1:}Props, any> {",
-      "  constructor(props: ${1:App}Props) {",
+      "export default class ${1:} extends React.Component<Props, any> {",
+      "  constructor(props: Props) {",
       "    super(props);",
       "  }",
       "",
-      "  public render() {",
+      "  render() {",
       "    return (",
       "      <View>",
       "         <Text>${1:} Component</Text>",
@@ -33,20 +33,20 @@
       "import * as React from 'react';",
       "import { View, StyleSheet, Text } from 'react-native';",
       "",
-      "export interface ${1:App}Props {",
+      "export interface Props {",
       "}",
       "",
-      "export interface ${1:App}State {",
+      "export interface State {",
       "}",
       "",
-      "export default class ${1:}Component extends React.Component<${1:}Props, ${1:}State> {",
-      "  constructor(props: ${1:App}Props) {",
+      "export default class ${1:} extends React.Component<Props, State> {",
+      "  constructor(props: Props) {",
       "    super(props);",
       "    this.state = {",
       "    };",
       "  }",
       "",
-      "  public render() {",
+      "  render() {",
       "    return (",
       "      <View>",
       "         <Text>${1:} Component</Text>",
@@ -61,15 +61,15 @@
   "React Component without import and export": {
     "prefix": "tsrnc",
     "body": [
-      "export interface ${1:App}Props {",
+      "export interface Props {",
       "}",
       "",
-      "class ${1:} extends React.Component<${1:}Props, any> {",
-      "  constructor(props: ${1:App}Props) {",
+      "class ${1:} extends React.Component<Props, any> {",
+      "  constructor(props: Props) {",
       "    super(props);",
       "  }",
       "",
-      "  public render() {",
+      "  render() {",
       "    return (",
       "      <View>",
       "         <Text>${1:}</Text>",
@@ -87,15 +87,15 @@
       "import * as React from 'react';",
       "import { View, StyleSheet, Text } from 'react-native';",
       "",
-      "export interface ${1:App}Props {",
+      "export interface Props {",
       "}",
       "",
-      "export default class ${1:} extends React.PureComponent<${1:}Props, any> {",
-      "  constructor(props: ${1:App}Props) {",
+      "export default class ${1:} extends React.PureComponent<Props, any> {",
+      "  constructor(props: Props) {",
       "    super(props);",
       "  }",
       "",
-      "  public render() {",
+      "  render() {",
       "    return (",
       "      <View>",
       "         <Text>${1:}</Text>",
@@ -113,10 +113,10 @@
       "import * as React from 'react';",
       "import { View, Text } from 'react-native';",
       "",
-      "export interface ${1:App}Props {",
+      "export interface Props {",
       "}",
       "",
-      "export function ${1:} (props: ${1:}Props) {",
+      "export function ${1:} (props: Props) {",
       "    return (",
       "      <View>",
       "         <Text>${1:}</Text>",
@@ -132,7 +132,7 @@
     "body": [
       "import * as React from 'react';",
       "",
-      "interface ${1:App}Props {$2",
+      "interface Props {$2",
       "}",
       "",
       "const $1: React.SFC<$1Props> = (props) => {",
@@ -143,37 +143,22 @@
   },
   "constructor": {
     "prefix": "conc",
-    "body": [
-      "constructor(props) {",
-      "  super(props);",
-      "  ${1:}",
-      "}"
-    ],
+    "body": ["constructor(props) {", "  super(props);", "  ${1:}", "}"],
     "description": "Add a constructor in class."
   },
   "render": {
     "prefix": "ren",
-    "body": [
-      "render() {",
-      "  return (",
-      "    ${1:}",
-      "  );",
-      "}"
-    ],
+    "body": ["render() {", "  return (", "    ${1:}", "  );", "}"],
     "description": "When called, it should examine this.props and this.state and return a single React element."
   },
   "componentSetState": {
     "prefix": "sst",
-    "body": [
-      "this.setState(${1:});"
-    ],
+    "body": ["this.setState(${1:});"],
     "description": "Performs a shallow merge of nextState into current state"
   },
   "bind method": {
     "prefix": "bnd",
-    "body": [
-      "this.${1:} = this.${1:}.bind(this);"
-    ],
+    "body": ["this.${1:} = this.${1:}.bind(this);"],
     "description": "bind this in method"
   },
   "React redux container": {
@@ -183,10 +168,10 @@
       "import { View, StyleSheet, Text } from 'react-native';",
       "import { connect } from 'react-redux';",
       "",
-      "export interface ${1:App}Props {",
+      "export interface Props {",
       "}",
       "",
-      "class ${1:} extends React.Component<${1:}Props, any> {",
+      "class ${1:} extends React.Component<Props, any> {",
       "  render() {",
       "    return (",
       "      <View>",
@@ -215,11 +200,7 @@
   // Style Sheet
   "StyleSheet Style": {
     "prefix": "rnss",
-    "body": [
-      "const styles = StyleSheet.create({",
-      "\t$1",
-      "});"
-    ]
+    "body": ["const styles = StyleSheet.create({", "\t$1", "});"]
   },
   "justifyContent": {
     "prefix": "just",
@@ -555,10 +536,7 @@
   // Redux
   "import redux statement": {
     "prefix": "rx",
-    "body": [
-      "import { connect } from 'react-redux';",
-      ""
-    ],
+    "body": ["import { connect } from 'react-redux';", ""],
     "description": "import { connect } from 'react-redux';"
   },
   "mappingToProps": {
@@ -619,18 +597,12 @@
   // React
   "import React": {
     "prefix": "imr",
-    "body": [
-      "import React from 'react';",
-      ""
-    ],
+    "body": ["import React from 'react';", ""],
     "description": "import React from 'react';"
   },
   "import React, { Component }": {
     "prefix": "imrc",
-    "body": [
-      "import React, { Component } from 'react';",
-      ""
-    ],
+    "body": ["import React, { Component } from 'react';", ""],
     "description": "import React, { Component } from 'react';"
   },
   "Import React-Native Element": {
@@ -653,10 +625,7 @@
   },
   "import React, { PureComponent }": {
     "prefix": "imrpc",
-    "body": [
-      "import React, { PureComponent } from 'react';",
-      ""
-    ],
+    "body": ["import React, { PureComponent } from 'react';", ""],
     "description": "import React, { PureComponent } from 'react';"
   },
   "import React, { PureComponent } & PropTypes": {
@@ -688,42 +657,22 @@
   },
   "emptyState": {
     "prefix": "est",
-    "body": [
-      "this.state = {",
-      "  $1",
-      "};",
-      ""
-    ],
+    "body": ["this.state = {", "  $1", "};", ""],
     "description": "Creates empty state object. To be used in a constructor."
   },
   "componentWillMount": {
     "prefix": "cwm",
-    "body": [
-      "componentWillMount = () => {",
-      "  $0",
-      "};",
-      ""
-    ],
+    "body": ["componentWillMount = () => {", "  $0", "};", ""],
     "description": "Invoked once, both on the client and server, immediately before the initial rendering occurs"
   },
   "componentDidMount": {
     "prefix": "cdm",
-    "body": [
-      "componentDidMount = () => {",
-      "  $0",
-      "};",
-      ""
-    ],
+    "body": ["componentDidMount = () => {", "  $0", "};", ""],
     "description": "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
   },
   "componentWillReceiveProps": {
     "prefix": "cwr",
-    "body": [
-      "componentWillReceiveProps = (nextProps) => {",
-      "  $0",
-      "};",
-      ""
-    ],
+    "body": ["componentWillReceiveProps = (nextProps) => {", "  $0", "};", ""],
     "description": "Invoked when a component is receiving new props. This method is not called for the initial render."
   },
   "shouldComponentUpdate": {
@@ -758,12 +707,7 @@
   },
   "componentWillUnmount": {
     "prefix": "cwun",
-    "body": [
-      "componentWillUnmount = () => {",
-      "  $0",
-      "};",
-      ""
-    ],
+    "body": ["componentWillUnmount = () => {", "  $0", "};", ""],
     "description": "Invoked immediately before a component is unmounted from the DOM."
   },
   "componentRender": {
@@ -786,10 +730,7 @@
   },
   "componentSetStateFunc": {
     "prefix": "ssf",
-    "body": [
-      "this.setState((state, props) => { return { $0 }})",
-      ""
-    ],
+    "body": ["this.setState((state, props) => { return { $0 }})", ""],
     "description": "Performs a shallow merge of nextState into current state"
   },
   // ==========================================================================================================================
@@ -838,22 +779,12 @@
   },
   "exportDefaultFunction": {
     "prefix": "edf",
-    "body": [
-      "export default (${1:params}) => {",
-      "  $0",
-      "};",
-      ""
-    ],
+    "body": ["export default (${1:params}) => {", "  $0", "};", ""],
     "description": "Export default function in ES7 syntax"
   },
   "method": {
     "prefix": "met",
-    "body": [
-      "${1:methodName} = (${2:params}) => {",
-      "  ${0};",
-      "};",
-      ""
-    ],
+    "body": ["${1:methodName} = (${2:params}) => {", "  ${0};", "};", ""],
     "description": "Creates a method inside a class in ES7 syntax"
   },
   "propertyGet": {
@@ -868,62 +799,32 @@
   },
   "propertyset": {
     "prefix": "pse",
-    "body": [
-      "set ${1:propertyName} = (${2:value}) => {",
-      "  ${0};",
-      "}",
-      ""
-    ],
+    "body": ["set ${1:propertyName} = (${2:value}) => {", "  ${0};", "}", ""],
     "description": "Creates a setter property inside a class in ES7 syntax"
   },
   "forEach": {
     "prefix": "fre",
-    "body": [
-      "${1:array}.forEach(${2:currentItem} => {",
-      "  ${0}",
-      "})",
-      ""
-    ],
+    "body": ["${1:array}.forEach(${2:currentItem} => {", "  ${0}", "})", ""],
     "description": "Creates a forEach statement in ES7 syntax"
   },
   "forOf": {
     "prefix": "fof",
-    "body": [
-      "for(let ${1:item} of ${2:object}) {",
-      "  ${0}",
-      "}",
-      ""
-    ],
+    "body": ["for(let ${1:item} of ${2:object}) {", "  ${0}", "}", ""],
     "description": "Iterating over property names of iterable objects"
   },
   "forIn": {
     "prefix": "fin",
-    "body": [
-      "for(let ${1:item} in ${2:object}) {",
-      "  ${0}",
-      "}",
-      ""
-    ],
+    "body": ["for(let ${1:item} in ${2:object}) {", "  ${0}", "}", ""],
     "description": "Iterating over property values of iterable objects"
   },
   "anonymousFunction": {
     "prefix": "anfn",
-    "body": [
-      "(${1:params}) => {",
-      "  ${2}",
-      "}",
-      ""
-    ],
+    "body": ["(${1:params}) => {", "  ${2}", "}", ""],
     "description": "Creates an anonymous function in ES7 syntax"
   },
   "namedFunction": {
     "prefix": "nfn",
-    "body": [
-      "const ${1:name} = (${2:params}) => {",
-      "  ${3}",
-      "}",
-      ""
-    ],
+    "body": ["const ${1:name} = (${2:params}) => {", "  ${3}", "}", ""],
     "description": "Creates a named function in ES7 syntax"
   },
   "destructingObject": {
@@ -938,32 +839,17 @@
   },
   "setInterval": {
     "prefix": "sti",
-    "body": [
-      "setInterval(() => {",
-      "  ${2}",
-      "}, ${0:intervalInms})",
-      ""
-    ],
+    "body": ["setInterval(() => {", "  ${2}", "}, ${0:intervalInms})", ""],
     "description": "Executes the given function at specified intervals in ES7 syntax"
   },
   "setTimeOut": {
     "prefix": "sto",
-    "body": [
-      "setTimeout(() => {",
-      "  ${2}",
-      "}, ${1:delayInms})",
-      ""
-    ],
+    "body": ["setTimeout(() => {", "  ${2}", "}, ${1:delayInms})", ""],
     "description": "Executes the given function after the specified delay in ES7 syntax"
   },
   "promise": {
     "prefix": "prom",
-    "body": [
-      "return new Promise((resolve, reject) => {",
-      "  ${1}",
-      "})",
-      ""
-    ],
+    "body": ["return new Promise((resolve, reject) => {", "  ${1}", "})", ""],
     "description": "Creates and returns a new Promise in the standard ES7 syntax"
   },
   "consoleAssert": {
@@ -1037,32 +923,17 @@
   // Testing
   "describeBlock": {
     "prefix": "desc",
-    "body": [
-      "describe('$1', () => {",
-      "  $0",
-      "})",
-      ""
-    ],
+    "body": ["describe('$1', () => {", "  $0", "})", ""],
     "description": "Testing `describe` block"
   },
   "testBlock": {
     "prefix": "test",
-    "body": [
-      "test('should $1', () => {",
-      "  $0",
-      "})",
-      ""
-    ],
+    "body": ["test('should $1', () => {", "  $0", "})", ""],
     "description": "Testing `test` block"
   },
   "itBlock": {
     "prefix": "tit",
-    "body": [
-      "it('should $1', () => {",
-      "  $0",
-      "})",
-      ""
-    ],
+    "body": ["it('should $1', () => {", "  $0", "})", ""],
     "description": "Testing `it` block"
   },
   "setupTest": {
@@ -1125,10 +996,7 @@
   // GraphQL
   "graphQLForComponent": {
     "prefix": "graphql",
-    "body": [
-      "import { compose, graphql } from 'react-apollo';",
-      ""
-    ]
+    "body": ["import { compose, graphql } from 'react-apollo';", ""]
   },
   "exportGraphQL": {
     "prefix": "expgql",
@@ -1192,11 +1060,7 @@
   },
   "Comment Block": {
     "prefix": "cm",
-    "body": [
-      "/**",
-      " * ${1}",
-      " */"
-    ]
+    "body": ["/**", " * ${1}", " */"]
   },
   // ==========================================================================================================================
   // Lorem Ipsum
